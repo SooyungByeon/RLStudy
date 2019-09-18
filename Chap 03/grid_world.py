@@ -119,7 +119,7 @@ def figure_3_5():
                 values = []
                 for action in ACTIONS:
                     (next_i, next_j), reward = step([i, j], action)
-                    # value iteration: keep every possible value at each state
+                    # value iteration: keep every possible value (by 4 actions) at each state
                     values.append(reward + DISCOUNT * value[next_i, next_j])
                 # Choose the highest (maximum) value at each state
                 new_value[i, j] = np.max(values)
